@@ -1,1 +1,4 @@
 %h1 Jobbee
+-@jobs.each do |job|
+  =image_tag job.image.url(:medium)
+  =job.title
