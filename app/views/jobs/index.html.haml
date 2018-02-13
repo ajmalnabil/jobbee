@@ -1,4 +1,10 @@
-%h1 Jobbee
--@jobs.each do |job|
-  =image_tag job.image.url(:medium)
-  =job.title
+.jobs-wrapper.row
+  -@jobs.each do |job|
+    .job
+      .job-head
+        .name
+          Ajmal Nabil
+      .image.center-block
+        =link_to (image_tag job.image.url(:medium), class:'img-responsive'), job_path(job)
+      %p.title
+        =job.title
