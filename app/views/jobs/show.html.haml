@@ -1,0 +1,13 @@
+.jobs-wrapper.row
+  .job
+    .job-head
+      .name
+        Ajmal Nabil
+    .image.center-block
+      =image_tag @job.image.url(:medium)
+    %p.title
+      =@job.title
+    .text-center.edit-links
+      =link_to "Cancel", jobs_path
+      |
+      = link_to "Edit Job", edit_job_path(@job)

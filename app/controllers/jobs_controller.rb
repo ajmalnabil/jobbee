@@ -1,4 +1,6 @@
 class JobsController < ApplicationController
+  before_action :set_job, only: [:show, :edit, :update, :destroy]
+
   def index
     @jobs = Job.all
   end
@@ -8,14 +10,49 @@ class JobsController < ApplicationController
   end
 
   def create
-    @post = Job.create(job_params)
-    redirect_to jobs_path
+    if @job = Job.create(job_params)
+      flash[:success] = "Your job has been created!"
+      redirect_to jobs_path
+    else
+      flash.now[:alert] = "Your new job couldn't be created!  Please check the form."
+      render :new
+    end
+  end
+
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @job.update(job_params)
+      flash[:success] = "Job updated."
+      redirect_to jobs_path
+    else
+      flash.now[:alert] = "Job update failed.  Please check the form."
+      render :edit
+    end
+  end
+
+  def destroy
+    if @job.destroy
+      flash[:success] = "Job successfully deleted."
+      redirect_to jobs_path
+    else
+      flash.now[:alert] = "Job deleteion failed.  Please try again."
+      render :edit
+    end
   end
 
   private
 
   def job_params
     params.require(:job).permit(:image, :title)
+  end
+
+  def set_job
+    @job = Job.find(params[:id])
   end
 
 end
