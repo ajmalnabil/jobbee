@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_action :owned_job, only: [:edit, :update, :destroy]
 
   def index
     @jobs = Job.all
@@ -55,6 +56,13 @@ class JobsController < ApplicationController
 
   def set_job
     @job = Job.find(params[:id])
+  end
+
+  def owned_job
+    unless current_user == @job.user
+      flash[:alert] = "That job doesn't belong to you!"
+      redirect_to root_path
+    end
   end
 
 end
