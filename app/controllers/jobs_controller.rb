@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_job, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -6,11 +7,12 @@ class JobsController < ApplicationController
   end
 
   def new
-    @job = Job.new
+    @job = current_user.jobs.build
   end
 
   def create
-    if @job = Job.create(job_params)
+    @job = current_user.jobs.build(job_params)
+    if @job.save
       flash[:success] = "Your job has been created!"
       redirect_to jobs_path
     else
