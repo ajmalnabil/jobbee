@@ -4,6 +4,8 @@
       .thumb-img
       .user-name
         = job.user.user_name
+      .time-ago
+        = time_ago_in_words job.created_at
     .image.center-block
       = link_to (image_tag job.image.url(:medium), class:'img-responsive'), job_path(job)
     .job-bottom

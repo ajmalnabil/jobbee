@@ -1,24 +1,35 @@
-# README
+# Jobbee Jobs Board Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a work in progress web application
+[*Jobbee:
+Not So Typical Job Site*]
+by [Ajmal Nabil](http://www.twitter.com/ajmalnjamal).
 
-Things you may want to cover:
+## Getting started
 
-* Ruby version
+To get started with the app, clone the repo and then install the needed gems:
 
-* System dependencies
+```
+$ bundle install --without production
+```
 
-* Configuration
+Next, migrate the database:
 
-* Database creation
+```
+$ rails db:migrate
+```
 
-* Database initialization
+Finally, run the test suite to verify that everything is working correctly:
 
-* How to run the test suite
+```
+$ rails t
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+If the test suite passes, you'll be ready to run the app in a local server:
 
-* Deployment instructions
+```
+$ rails s
+```
 
-* ...
+For more information, contact me on
+[*Twitter*](http://www.twitter.com/ajmalnjamal).
