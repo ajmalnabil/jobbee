@@ -1,6 +1,14 @@
 class CommentsController < ApplicationController
   before_action :set_job
 
+  def index
+    @comments = @job.comments.order("created_at ASC")
+
+    respond_to do |format|
+      format.html { render layout: !request.xhr? }
+    end
+  end
+
   def create
     @comment = @job.comments.build(comment_params)
     @comment.user_id = current_user.id
@@ -27,7 +35,7 @@ class CommentsController < ApplicationController
       end
     end
   end
-  
+
   private
 
   def comment_params

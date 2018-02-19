@@ -15,8 +15,11 @@
             = job.user.user_name
           = job.title
         .comments{id: "comments_#{job.id}"}
-          - if job.comments
-            = render job.comments, job: job
+          - if job.comments.any?
+            .paginator{id: "#comments-paginator-#{job.id}"}
+              - unless job.comments.count <= 4
+                = link_to "view all #{job.comments.count} comments", job_comments_path(job), remote: true, class: 'more-comments', data: {job_id: "#{job.id}", type: "html"}
+            = render job.comments.last(4), job: job
     .comment-like-form.row
       .like-button.col-sm-1
         %span(class="glyphicon glyphicon-heart-empty")
