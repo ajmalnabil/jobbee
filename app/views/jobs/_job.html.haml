@@ -12,7 +12,7 @@
       .title
         .title-content
           .user-name
-            = job.user.user_name
+            = link_to job.user.user_name, profile_path(job.user.user_name)
           = job.title
         .comments{id: "comments_#{job.id}"}
           - if job.comments.any?
