@@ -3,7 +3,7 @@
     .job-head
       .thumb-img
       .user-name
-        = job.user.user_name
+        = link_to job.user.user_name, profile_path(job.user.user_name)
       .time-ago
         = time_ago_in_words job.created_at
     .image.center-block
