@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_action :set_job, only: [:show, :edit, :update, :destroy, :like]
   before_action :owned_job, only: [:edit, :update, :destroy]
 
   def index
@@ -46,6 +46,15 @@ class JobsController < ApplicationController
       flash.now[:alert] = "Job deleteion failed.  Please try again."
       render :edit
     end
+  end
+
+  def like
+    if @job.liked_by current_user
+        respond_to do |format|
+          format.html { redirect_to :back }
+          format.js
+        end
+      end
   end
 
   private

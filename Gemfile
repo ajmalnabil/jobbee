@@ -21,6 +21,7 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
 gem 'devise', '~> 4.4', '>= 4.4.1'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem 'acts_as_votable', '~> 0.11.1'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -12,23 +12,30 @@
  *
  */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
- body {
+body {
    background-color: #fafafa;
    font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
- }
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
 
  /* ## NAVBAR CUSTOMISATIONS ## */
 
- .navbar-brand {
+.navbar-brand {
    a {
      color: #125688;
    }
  }
 
- .navbar-default {
+.navbar-default {
    background-color: #fff;
    height: 54px;
    .navbar-nav li a {
@@ -220,4 +227,28 @@
 
 .profile-bio {
   margin-top: 20px;
+}
+
+#user_bio {
+  border: 1px solid gray;
+}
+
+#user_avatar {
+  padding: 1em;
+  margin: 0px auto;
+}
+
+.likes {
+  margin-top: 20px;
+  margin-bottom: 7px;
+}
+
+.like {
+  text-decoration: none;
+  color: red;
+}
+
+.like-button a:hover, a:focus {
+  text-decoration: none;
+  color: red;
 }

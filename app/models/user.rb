@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  acts_as_voter
   has_many :jobs, dependent: :destroy
   has_many :comments, dependent: :destroy
   # Include default devise modules. Others available are:
