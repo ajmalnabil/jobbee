@@ -25,6 +25,12 @@ body {
   h1 {
     margin-bottom: 10px;
   }
+  height: 100%;
+  background-image: image-url('kldesktop_pic1.jpg');
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
  /* ## NAVBAR CUSTOMISATIONS ## */
