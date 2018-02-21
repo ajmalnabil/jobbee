@@ -31,13 +31,16 @@ body {
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  a {
+    color: #cc0000;
+  }
 }
 
  /* ## NAVBAR CUSTOMISATIONS ## */
 
 .navbar-brand {
    a {
-     color: #125688;
+     color: #cc0000;
    }
  }
 
@@ -45,7 +48,7 @@ body {
    background-color: #fff;
    height: 54px;
    .navbar-nav li a {
-     color: #125688;
+     color: #cc0000;
    }
  }
 
@@ -76,7 +79,7 @@ body {
      padding-left: 24px;
      padding-right: 24px;
      padding-top: 24px;
-     color: #125688;
+     color: #cc0000;
      font-size: 15px;
      line-height: 18px;
      .user-name, .time-ago {
@@ -84,6 +87,7 @@ body {
      }
      .user-name {
        font-weight: 500;
+       color: #cc0000;
      }
      .time-ago {
        color: #A5A7AA;
@@ -106,7 +110,7 @@ body {
    .user-name {
      font-weight: 500;
      margin-right: 0.3em;
-     color: #125688;
+     color: #cc0000;
      font-size: 15px;
    }
    .user-name, .title-content {
@@ -193,6 +197,7 @@ body {
      color: #2D6DA8;
    }
  }
+
 
  .comments {
    .paginator {

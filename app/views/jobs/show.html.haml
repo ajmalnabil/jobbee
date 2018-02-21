@@ -8,20 +8,3 @@
   - else
     .text-center.edit-links
       =link_to "Cancel", jobs_path
-
-  -# .job
-  -#   .job-head
-  -#     .name
-  -#       = @job.user.user_name
-  -#   .image.center-block
-  -#     =image_tag @job.image.url(:medium)
-  -#   %p.title
-  -#     =@job.title
-  -#   .text-center.edit-links
-  -#     - if @job.user.id == current_user.id
-  -#       = link_to "Cancel", jobs_path
-  -#       |
-  -#       = link_to "Edit Job", edit_job_path(@job)
-  -#     - else
-  -#       =link_to "Cancel", root_path
-  -#

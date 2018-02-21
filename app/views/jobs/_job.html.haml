@@ -18,9 +18,9 @@
         .comments{id: "comments_#{job.id}"}
           - if job.comments.any?
             .paginator{id: "#comments-paginator-#{job.id}"}
-              - unless job.comments.count <= 4
+              - unless job.comments.count <= 3
                 = link_to "view all #{job.comments.count} comments", job_comments_path(job), remote: true, class: 'more-comments', data: {job_id: "#{job.id}", type: "html"}
-            = render job.comments.last(4), job: job
+            = render job.comments.last(3), job: job
     .comment-like-form.row
       .like-button.col-sm-1
         =link_to '', like_job_path(job.id), remote: true,

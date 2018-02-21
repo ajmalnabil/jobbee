@@ -1,15 +1,9 @@
 .center.jumbotron
   %h1 Jobbee
-  %h1 The ASEAN Tech Jobs Portal
+  %h1 Ruby on Rails Jobs
+  %h2 Find RoR jobs in the region
   %h2
-    This is the home page for the
-    %a{:href => "https://www.github.com/ajmalnabil/jobbee"} Jobbee Job Portal
-    web application.
--# 
--# #jobs
--#   = render 'jobs'
--#
--# #paginator.text-center
--#   = link_to_next_page @jobs, 'SEE MORE', remote: true, id: 'load_more'
+    We connect RoR developers with RoR companies using
+    %a{:href => "https://www.github.com/ajmalnabil/jobbee"} Jobbee
 
 = render 'job_dashboard', jobs: @jobs

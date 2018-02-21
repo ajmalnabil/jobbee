@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-  get 'relationships/follow_user'
+  # get 'relationships/follow_user'
+  # get 'relationships/unfollow_user'
+  # get 'profiles/show'
 
-  get 'relationships/unfollow_user'
 
-  get 'profiles/show'
-
-  get 'browse', to: 'jobs#browse', as: :browse_jobs
 
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :jobs do
@@ -15,6 +13,8 @@ Rails.application.routes.draw do
     end
   end
   root 'jobs#index'
+
+  get 'browse', to: 'jobs#browse', as: :browse_jobs
   get ':user_name', to: 'profiles#show', as: :profile
   get ':user_name/edit', to: 'profiles#edit', as: :edit_profile
   patch ':user_name/edit', to: 'profiles#update', as: :update_profile
