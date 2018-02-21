@@ -3,7 +3,8 @@ class Job < ApplicationRecord
 
   belongs_to  :user
   has_many :comments, dependent: :destroy
-  default_scope -> { order(created_at: :desc) }
+  # default_scope -> { order(created_at: :desc) }
+  scope :of_followed_users, -> (following_users) { where user_id: following_users }
 
   validates :user_id, presence: true
   validates :image, presence: true

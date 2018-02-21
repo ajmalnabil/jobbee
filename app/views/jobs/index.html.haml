@@ -5,9 +5,11 @@
     This is the home page for the
     %a{:href => "https://www.github.com/ajmalnabil/jobbee"} Jobbee Job Portal
     web application.
+-# 
+-# #jobs
+-#   = render 'jobs'
+-#
+-# #paginator.text-center
+-#   = link_to_next_page @jobs, 'SEE MORE', remote: true, id: 'load_more'
 
-#jobs
-  = render 'jobs'
-
-#paginator.text-center
-  = link_to_next_page @jobs, 'SEE MORE', remote: true, id: 'load_more'
+= render 'job_dashboard', jobs: @jobs

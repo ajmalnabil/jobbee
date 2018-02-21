@@ -4,7 +4,8 @@ class ProfilesController < ApplicationController
   before_action :owned_profile, only: [:edit, :update]
 
   def show
-    @jobs = User.find_by(user_name: params[:user_name]).jobs.order('created_at DESC')
+    @jobs = @user.jobs.order('created_at DESC')
+    # .page params[:page]
   end
 
   def edit

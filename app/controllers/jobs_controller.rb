@@ -4,7 +4,8 @@ class JobsController < ApplicationController
   before_action :owned_job, only: [:edit, :update, :destroy]
 
   def index
-    @jobs = Job.all.order('created_at DESC').page params[:page]
+    @jobs = Job.of_followed_users(current_user.following).order('created_at DESC').page params[:page]
+    # @jobs = Job.all.order('created_at DESC').page params[:page]
   end
 
   def new
@@ -55,6 +56,10 @@ class JobsController < ApplicationController
           format.js
         end
       end
+  end
+
+  def browse
+    @jobs = Job.all.order('created_at DESC').page params[:page]
   end
 
   private
