@@ -1,11 +1,10 @@
 class ProfilesController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_user
+  before_action :authenticate_user!
   before_action :owned_profile, only: [:edit, :update]
 
   def show
-    @jobs = @user.jobs.order('created_at DESC')
-    # .page params[:page]
+    @jobs = @user.jobs.order('created_at DESC') .page params[:page]
   end
 
   def edit

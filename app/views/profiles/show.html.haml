@@ -29,5 +29,7 @@
       .user-statistics
         %p
           = pluralize @user.jobs.count, 'job'
+          = pluralize @user.followers.count, 'follower'
+
 -@jobs.each do |job|
   = render 'jobs/job', job: job
